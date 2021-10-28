@@ -42,7 +42,7 @@ const [editedQuantity, setEditedQuantity] = useState('1')
           type='button'
           className='order-btn'
           onClick={() => {
-            editOrder(order._id, editedQuantity, editedItem);
+            editOrder(order._id, editedQuantity, editedItem, order.ordered_by);
             setIsEdit(false);
           }}>
           Confirm Change

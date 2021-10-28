@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import {useHistory} from 'react-router';
 import LoginForm from './login-form/loginForm';
 import './login.css';
 
 const Login = props => {
   const token = useSelector(state => state.auth.token);
+  const history = useHistory()
 
   useEffect(() => {
     if (token) {
-      props.history.push('/view-orders');
+      history.push('/view-orders');
     }
-  }, [token]);
+  }, [token, history]);
 
   return (
     <div className='main-body'>
